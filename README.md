@@ -2,9 +2,7 @@
 
 A modern [MCP (Model Context Protocol)](https://github.com/ai21labs/model-context-protocol) server for accessing the Jewish library via the Sefaria API.
 
-## What is MCP?
 
-MCP (Model Context Protocol) is an open protocol for connecting Large Language Models (LLMs) to external tools, APIs, and knowledge sources. It enables LLMs to retrieve, reference, and interact with structured data and external services in a standardized way. Learn more in the [MCP documentation](https://github.com/ai21labs/model-context-protocol).
 
 ## What does this server do?
 
@@ -22,6 +20,10 @@ This server exposes the Sefaria Jewish library as a set of MCP tools, allowing L
 - Get situational Jewish calendar information
 
 All endpoints are optimized for LLM consumption (compact, relevant, and structured responses).
+
+## What is MCP?
+
+MCP (Model Context Protocol) is an open protocol for connecting Large Language Models (LLMs) to external tools, APIs, and knowledge sources. It enables LLMs to retrieve, reference, and interact with structured data and external services in a standardized way. Learn more in the [MCP documentation](https://modelcontextprotocol.io/).
 
 ## How to Run
 
