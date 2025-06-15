@@ -7,8 +7,11 @@ import base64
 from io import BytesIO
 from PIL import Image
 from typing import Callable, Any
+import os
+from dotenv import load_dotenv
 
-SEFARIA_API_BASE_URL = "https://www.sefaria.org"
+load_dotenv()
+SEFARIA_API_BASE_URL = os.getenv("SEFARIA_API_BASE_URL", "https://www.sefaria.org")
 #SEFARIA_API_BASE_URL = "http://localhost:8000"
 
 # Maximum image size in bytes (1MB)

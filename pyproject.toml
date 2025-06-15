@@ -15,7 +15,8 @@ dependencies = [
     "requests",
     "pillow",
     "fastapi",
-    "uvicorn"
+    "uvicorn",
+    "python-dotenv"
 ]
 
 [project.scripts]
