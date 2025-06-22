@@ -974,7 +974,7 @@ def _optimize_links_response(data):
         return data
         
     optimized_links = []
-    for link in limited_data:
+    for link in data:
         if isinstance(link, dict):
             # Keep only essential link fields
             optimized_link = {

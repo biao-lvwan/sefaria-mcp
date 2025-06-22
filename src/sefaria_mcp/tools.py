@@ -25,8 +25,14 @@ def register_tools(mcp: FastMCP) -> None:
         """
         Searches across the entire Jewish library for passages containing specific terms.
         
+        SEARCH TIPS:
+        - Hebrew/Aramaic searches are more reliable than English translations
+        - English searches can be hit-and-miss due to translation variations
+        - If no results found, try searching with fewer words
+        - Use specific Hebrew terms when possible for better accuracy
+        
         Args:
-            query: Search terms.
+            query: Search terms (Hebrew/Aramaic preferred for best results).
             filters: Category paths to limit search scope.
             size: Maximum number of results to return.
             
@@ -48,8 +54,14 @@ def register_tools(mcp: FastMCP) -> None:
         """
         Searches for content within one specific book or text work.
 
+        SEARCH TIPS:
+        - Hebrew/Aramaic searches are more reliable than English translations
+        - English searches can be hit-and-miss due to translation variations
+        - If no results found, try searching with fewer words
+        - Use specific Hebrew terms when possible for better accuracy
+
         Args:
-            query: Search terms to find within the specified book.
+            query: Search terms to find within the specified book (Hebrew/Aramaic preferred).
             book_name: Exact name of the book to search within.
             size: Maximum number of results to return.
 
@@ -66,8 +78,14 @@ def register_tools(mcp: FastMCP) -> None:
         """
         Searches specifically within Jewish reference dictionaries.
 
+        SEARCH TIPS:
+        - Hebrew/Aramaic searches are more reliable than English translations
+        - English searches can be hit-and-miss due to translation variations
+        - If no results found, try searching with fewer words
+        - Use specific Hebrew terms when possible for better accuracy
+
         Args:
-            query: Hebrew, Aramaic, or English term to look up.
+            query: Hebrew, Aramaic, or English term to look up (Hebrew/Aramaic preferred).
 
         Returns:
             JSON string with dictionary entries.
@@ -98,7 +116,7 @@ def register_tools(mcp: FastMCP) -> None:
         ctx: Context,
         image_url: str,
         manuscript_title: Optional[str] = None,
-    ) -> dict:
+    ) -> str:
         """
         Downloads and returns a specific manuscript image from a given image URL.
 
@@ -107,12 +125,12 @@ def register_tools(mcp: FastMCP) -> None:
             manuscript_title: Title or description for the manuscript.
 
         Returns:
-            A dictionary containing the image data and metadata.
+            JSON string containing the image data and metadata.
         """
         ctx.log(f"[get_manuscript] called with image_url={image_url!r}, manuscript_title={manuscript_title!r}")
         result = await _get_manuscript(ctx.log, image_url, manuscript_title)
         ctx.log(f"[get_manuscript] response size: {_payload_size(result)} bytes")
-        return result
+        return json.dumps(result, ensure_ascii=False)
 
     @mcp.tool
     async def get_situational_info(ctx: Context) -> str:
