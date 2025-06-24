@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -e .
 # Create a non-root user for security
 RUN useradd --create-home --shell /bin/bash --uid 1001 app \
     && chown -R app:app /app
-USER app
+USER 1001
 
 EXPOSE 8088
 
