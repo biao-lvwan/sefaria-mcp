@@ -16,7 +16,7 @@ COPY src/ ./src/
 RUN pip install --no-cache-dir -e .
 
 # Create a non-root user for security
-RUN useradd --create-home --shell /bin/bash app \
+RUN useradd --create-home --shell /bin/bash --uid 1001 app \
     && chown -R app:app /app
 USER app
 
