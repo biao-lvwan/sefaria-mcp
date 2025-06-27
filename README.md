@@ -4,6 +4,7 @@ A modern [MCP (Model Context Protocol)](https://github.com/ai21labs/model-contex
 
 
 
+
 ## What does this server do?
 
 This server exposes the Sefaria Jewish library as a set of MCP tools, allowing LLMs and other MCP clients to:
