@@ -20,6 +20,7 @@ register_tools(mcp)
 # Create a Starlette-compatible ASGI app for use with Uvicorn/Hypercorn.
 # This exposes the MCP endpoint at `/sse` and keeps FastMCP's session manager intact.
 app = mcp.http_app(transport="sse")
+app.router.redirect_slashes = False
 
 # ---------------------------------------------------------------------------
 # CLI entry-point
