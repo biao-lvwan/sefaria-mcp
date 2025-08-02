@@ -1,8 +1,9 @@
 from fastmcp import FastMCP
 
+from sefaria_mcp.resources import register_resources
+from sefaria_mcp.tools import register_tools
+
 # Local imports
-from .resources import register_resources
-from .tools import register_tools
 
 # ---------------------------------------------------------------------------
 # Create the FastMCP server instance. Giving the server a descriptive name is
